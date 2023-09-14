@@ -11,9 +11,27 @@ export default class Post extends React.Component {
         this.state = {
             comments: props.comments,
             content: props.content,
-            count: 0
+            counts: {},
+            highestCount: 0,
+            highestCountName: ''
         };
+        this.countClicks = this.countClicks.bind(this)
     }
+
+    countClicks(name){
+        this.setState(state => {
+            state.counts[name]
+                ? state.counts[name] += 1
+                : state.counts[name] = 1;
+            if(state.count[name] > state.highestCount){
+                state.highestCount = state.counts[name];
+                state.highestCountName = name;
+            }
+            return state;
+
+        });
+    }
+
     render() {
         let tempComments = this.state.comments;
         // setTimeout(() => {
@@ -46,7 +64,12 @@ export default class Post extends React.Component {
                     {this.state.content}
                 </div>
                 <div>
-                    <LikeButton/>
+                    <h2>{this.highestCountName}</h2>
+                    <LikeButton
+                        name='like'
+                        count={this.state.counts.like}
+                        onClick={this.countClicks}
+                    />
                     <ReplyButton/>
                     {comments}
 
