@@ -1,5 +1,6 @@
 import React from "react";
 import Movie from "./Movie";
+import Stars from "./Stars";
 
 export default class MovieList extends React.Component{
 
@@ -71,9 +72,12 @@ export default class MovieList extends React.Component{
         return(
             <div className="container">
                 {movies.map((movie) => (
-                    <Movie key={movie.id} movie={movie} title={movie.title} image={movie.image} description={movie.description} />
+                    <div>
+                        <Movie key={movie.id} movie={movie} title={movie.title} image={movie.image} description={movie.description} id={movie.id} />
+                        <Stars id={movie.id}/>
+                    </div>
                 ))}
-
+                
             </div>
         );
     };

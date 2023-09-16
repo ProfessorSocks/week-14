@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import MovieList from './components/MovieList';
 
-function App() {
+function App(props) {
   const [movies, setMovies] = useState([{
     "Title": "Star Wars: Episode IV - A New Hope",
     "Year": "1977",
@@ -35,14 +35,10 @@ function App() {
   }])
 
   return (
-    <div className='container movie-app'>
-      <div className='row'>
-        <div class="col-sm">
-          <MovieList movies={movies} />
-        </div>
-          
-      </div>
-        
+    <div>
+        {movies.map((movie, index) => (<div key={movie.imdbID} style={{display: "inline-block"}} className='movie-app'>
+            <img src={movie.Poster}  alt="movie" ></img>
+        </div>) )}
     </div>
   );
 }

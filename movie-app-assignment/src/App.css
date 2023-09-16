@@ -5,7 +5,7 @@ body {
   color: white;
 }
 
-.movie-app > .row {
+.movie-app {
   overflow-x: auto;
   flex-wrap: nowrap;
 }
