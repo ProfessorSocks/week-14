@@ -34,7 +34,7 @@ export default class NewsFeed extends React.Component{
                 username: 'larry',
                 date: '09-13-23'
             }
-        ];
+        ]
         return(
             <div className='container'>
                 <Post {...{comments:comments,content: "my post"}} />

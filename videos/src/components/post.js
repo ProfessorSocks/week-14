@@ -11,21 +11,21 @@ export default class Post extends React.Component {
         this.state = {
             comments: props.comments,
             content: props.content,
-            counts: {},
+            counts: { like: 0},
             highestCount: 0,
             highestCountName: ''
         };
         this.countClicks = this.countClicks.bind(this)
     }
 
-    countClicks(name){
+    countClicks(like){
         this.setState(state => {
-            state.counts[name]
-                ? state.counts[name] += 1
-                : state.counts[name] = 1;
-            if(state.count[name] > state.highestCount){
-                state.highestCount = state.counts[name];
-                state.highestCountName = name;
+            state.counts[like]
+                ? state.counts[like] += 1
+                : state.counts[like] = 1;
+            if(state.count[like] > state.highestCount){
+                state.highestCount = state.counts[like];
+                state.highestCountName = like;
             }
             return state;
 

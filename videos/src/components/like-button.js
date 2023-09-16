@@ -7,10 +7,10 @@ export default class LikeButton extends React.Component{
         
         this.handleClick = this.handleClick.bind(this);
     }
-
+    
     handleClick() {
-        this.props.onClick(this.props.name);
-        console.log(this.props.count)
+        this.props.onClick(this.props.count);
+        console.log(this.props.count);
     }
 
     render(){
