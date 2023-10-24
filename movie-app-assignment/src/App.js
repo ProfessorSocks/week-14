@@ -36,11 +36,14 @@ function App(props) {
 
   return (
     <div>
-        {movies.map((movie, index) => (<div key={movie.imdbID} style={{display: "inline-block"}} className='movie-app'>
-            <img src={movie.Poster}  alt="movie" ></img>
-        </div>) )}
+        <MovieList/>
     </div>
   );
 }
 
 export default App;
+
+
+/*{movies.map((movie, index) => (<div key={movie.imdbID} style={{display: "inline-block"}} className='movie-app'>
+            <img src={movie.Poster}  alt="movie" ></img>
+        </div>) )} */
